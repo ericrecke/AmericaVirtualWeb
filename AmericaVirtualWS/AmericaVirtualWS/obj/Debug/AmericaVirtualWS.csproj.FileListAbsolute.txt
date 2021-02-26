@@ -1,0 +1,15 @@
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtualWS.dll.config
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtualWS.dll
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtualWS.pdb
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\obj\Debug\AmericaVirtualWS.csprojAssemblyReference.cache
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\obj\Debug\AmericaVirtualWS.csproj.CoreCompileInputs.cache
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\obj\Debug\AmericaVirtualWS.dll
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\obj\Debug\AmericaVirtualWS.pdb
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtual_DataModel.dll
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\bin\EntityFramework.dll
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\bin\EntityFramework.SqlServer.dll
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtual_DataModel.pdb
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtual_DataModel.dll.config
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\bin\EntityFramework.xml
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\bin\EntityFramework.SqlServer.xml
+C:\Users\ericr\source\repos\AmericaVirtualWS\AmericaVirtualWS\obj\Debug\AmericaVirtualWS.csproj.CopyComplete
