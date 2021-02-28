@@ -17,6 +17,7 @@ namespace AmericaVirtual_DataModel.Mappings
             this.Property(t => t.Id_Country).HasColumnName("Id_Country");
             this.Property(t => t.Id_Province).HasColumnName("Id_Province");
             this.Property(t => t.Date).HasColumnName("Date");
+            this.Property(t => t.TypeWeather).HasColumnName("TypeWeather");
             this.Property(t => t.Sensation_C).HasColumnName("Sensation_C");
             this.Property(t => t.Sensation_F).HasColumnName("Sensation_F");
             this.Property(t => t.Rainfall).HasColumnName("Rainfall");

@@ -45,6 +45,12 @@
   <wsdl:message name="IAmericaVirtualService_GetUsers_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUsersResponse" />
   </wsdl:message>
+  <wsdl:message name="IAmericaVirtualService_GetWeathers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWeathers" />
+  </wsdl:message>
+  <wsdl:message name="IAmericaVirtualService_GetWeathers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWeathersResponse" />
+  </wsdl:message>
   <wsdl:message name="IAmericaVirtualService_AddModCountry_InputMessage">
     <wsdl:part name="parameters" element="tns:AddModCountry" />
   </wsdl:message>
@@ -87,6 +93,10 @@
     <wsdl:operation name="GetUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IAmericaVirtualService/GetUsers" message="tns:IAmericaVirtualService_GetUsers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAmericaVirtualService/GetUsersResponse" message="tns:IAmericaVirtualService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeathers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAmericaVirtualService/GetWeathers" message="tns:IAmericaVirtualService_GetWeathers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAmericaVirtualService/GetWeathersResponse" message="tns:IAmericaVirtualService_GetWeathers_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddModCountry">
       <wsdl:input wsaw:Action="http://tempuri.org/IAmericaVirtualService/AddModCountry" message="tns:IAmericaVirtualService_AddModCountry_InputMessage" />
@@ -150,6 +160,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetUsers">
       <soap:operation soapAction="http://tempuri.org/IAmericaVirtualService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeathers">
+      <soap:operation soapAction="http://tempuri.org/IAmericaVirtualService/GetWeathers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

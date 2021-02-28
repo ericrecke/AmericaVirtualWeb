@@ -1,0 +1,129 @@
+﻿@using AmericaVirtual_DataModel
+@using AmericaVirtualWS
+@using Newtonsoft.Json
+@{
+    Layout = null;
+}
+@model Weather
+
+<div class="card">
+    <div class="card-body">
+        @using (Html.BeginForm("UpdateWeather", "Weather", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal form-material", role = "form" }))
+        {
+            <div class="form-group">
+                @Html.LabelFor(x => x.Date, "Fecha")
+                @Html.TextBoxFor(x => x.Date, "{0:yyyy-MM-dd}", new { @class = "form-control form-control-zone", @type = "date", @style = "width:100%;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.TypeWeather, "Tipo de Clima")
+                @Html.EnumDropDownListFor(x => x.TypeWeather, new { @class = "form-control form-control-zone", @style = "width:100%;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Humidity, "Humedad")
+                @Html.TextBoxFor(x => x.Humidity, new { @class = "form-control form-control-zone", @type = "number", @style = "width:100%;", @placeholder = "0%" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Rainfall, "Precipitaciones")
+                @Html.TextBoxFor(x => x.Rainfall, new { @class = "form-control form-control-zone", @type = "number", @style = "width:100%;", @placeholder = "0%" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Wind, "Vientos")
+                @Html.TextBoxFor(x => x.Wind, new { @class = "form-control form-control-zone", @type = "number", @style = "width:100%;", @placeholder = "0 km/h" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Sensation_C, "°C")
+                @Html.TextBoxFor(x => x.Sensation_C, new { @class = "form-control form-control-zone", @type = "number", @style = "width:100%;", @placeholder = "0°C" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Sensation_F, "°F")
+                @Html.TextBoxFor(x => x.Sensation_F, new { @class = "form-control form-control-zone", @type = "number", @style = "width:100%;", @placeholder = "0°F" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Date_Add, "Fecha Agregado")
+                @Html.TextBoxFor(x => x.Date_Add, "{0:yyyy-MM-dd}", new { @class = "form-control form-control-zone", @type = "date", @style = "width:100%;" })
+            </div>
+            <div class="form-group">
+                @{
+                    var ListCountries = new List<Countries>();
+                }
+                @Html.LabelFor(x => x.Id_Country, "País")
+                @Html.DropDownListFor(x => x.Id_Country, ListCountries.Select(x => new SelectListItem() { Value = x.Id.ToString(), Text = x.Name }).ToList(), new { @class = "form-control form-control-zone", @style = "width:100%;", @placeholder = "Seleccioná un país" })
+            </div>
+            <div class="form-group">
+                @{
+                    var ListProvinces = new List<Countries>();
+                }
+                @Html.LabelFor(x => x.Id_Province, "Provincia")
+                @Html.DropDownListFor(x => x.Id_Province, ListProvinces.Select(x => new SelectListItem() { Value = x.Id.ToString(), Text = x.Name }).ToList(), new { @class = "form-control form-control-zone", @style = "width:100%;", @placeholder = "Seleccioná una provincia" })
+            </div>
+            @Html.HiddenFor(x => x.Id)
+            <br />
+            <button type="submit" class="btn btn-america text-uppercase" style="width:100%;">Guardar</button>
+        }
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        GetCountries();
+    });
+
+        $("#Id_Country").on('change', function () {
+            GetProvince();
+        });
+
+            function GetCountries() {
+            $.getJSON("@Url.Action("GetCountriesIndex", "Home", new { Area = ""})",
+            function (modelolist) {
+                var select = $("#Id_Country");
+                select.empty();
+                if(modelolist.Key)
+                {
+                    $.each(modelolist.Tabla, function (index, itemData) {
+                        select.append($('<option/>', {
+                            value: itemData.Value,
+                            text: itemData.Text
+                        }));
+                    });
+                    $(select).removeAttr('disabled');
+                    if('@Model.Id_Country' != '0')
+                    $(select).prop("value", @Model.Id_Country);
+                    $(select).selectedIndex = 0;
+                }
+                else{
+                    select.append($('<option/>', {
+                        value: "",
+                        text: "No hay Resultados"
+                    }));
+                }
+                GetProvince();
+            });
+        }
+
+        function GetProvince() {
+            $.getJSON("@Url.Action("GetProvincesIndex", "Home", new { Area = ""})", { Id_Country: $("#Id_Country").val()},
+            function (modelolist) {
+                var select = $("#Id_Province");
+                select.empty();
+                if(modelolist.Key)
+                {
+                    $.each(modelolist.Tabla, function (index, itemData) {
+                        select.append($('<option/>', {
+                            value: itemData.Value,
+                            text: itemData.Text
+                        }));
+                    });
+                    $(select).removeAttr('disabled');
+                    if('@Model.Id_Province' != '0')
+                    $(select).prop("value", @Model.Id_Province);
+                    $(select).selectedIndex = 0;
+                }
+                else{
+                    select.append($('<option/>', {
+                        value: "",
+                        text: "No hay Resultados"
+                    }));
+                }
+            });
+        }
+</script>

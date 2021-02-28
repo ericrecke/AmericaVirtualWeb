@@ -1,9 +1,13 @@
 ﻿body {
     /*padding-top: 50px;*/
     padding-bottom: 20px;
-    background-color: #F2F2F1;
+    background-color: #F2F2F1;    
 }
 
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('Fonts/BebasNeue.otf') format('opentype'), url('Fonts/BebasNeue Bold.otf') format('opentype'), url('Fonts/BebasNeue Book.otf') format('opentype'), url('Fonts/BebasNeue Light.otf') format('opentype'), url('Fonts/BebasNeue Regular.otf') format('opentype'), url('Fonts/BebasNeue Thin.otf') format('opentype');
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -92,9 +96,17 @@ hr.c-america {
     border: 1px solid #FF9A90;
 }
 
+.c-virtual {
+    color: #314284;
+}
+
 hr.c-virtual {
     /*    margin: 0;*/
     border: 1px solid #314284;
+}
+
+th.c-virtual {
+    border-bottom: 2px solid #314284 !important;
 }
 
 h4.c-virtual {
@@ -148,7 +160,7 @@ li.weather {
 }
 
 .t-weather {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     margin-bottom: 0;
 }
@@ -158,15 +170,22 @@ li.weather {
         font-weight: 600;
     }
 
+.t-font-virtual {
+    font-family: BebasNeue;
+}
+
+.t-weather-s {
+    font-size: 20px;
+}
+
 .t-weather-l {
     font-size: 30px;
     font-weight: 600;
-    margin-top: -50px;
     margin-bottom: 0;
 }
 
     .t-weather-l span {
-        font-size: 80px;
+        font-size: 70px;
     }
 
 li.weather:not(:last-child) {
@@ -227,6 +246,48 @@ li.weather:not(:last-child) {
 /**/
 
 /*New Design Buttons - Backgrounds*/
+
+.l-spacing-1{
+    letter-spacing: 1px;
+}
+.l-spacing-2 {
+    letter-spacing: 2px;
+}
+.l-spacing-3 {
+    letter-spacing: 3px;
+}
+.l-spacing-4 {
+    letter-spacing: 4px;
+}
+.l-spacing-5 {
+    letter-spacing: 5px;
+}
+.mt-5n {
+    margin-top: -5px;
+}
+.mt-10n {
+    margin-top: -10px;
+}
+.mt-20n {
+    margin-top: -20px;
+}
+.mt-40n{
+    margin-top: -40px;
+}
+
+.table-bordered-virtual {
+    border: 1px solid #314284;
+}
+
+    .table-bordered-virtual th,
+    .table-bordered-virtual td {
+        border: 1px solid #314284;
+    }
+
+    .table-bordered-virtual thead th,
+    .table-bordered-virtual thead td {
+        border-bottom-width: 2px;
+    }
 
 .bg-america {
     background-color: #FF6859;

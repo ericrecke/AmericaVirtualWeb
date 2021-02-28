@@ -13,5 +13,8 @@ namespace AmericaVirtual_Web.Models
         public int Id_Pais { get; set; }
         public int Id_Provincia { get; set; }
 
+        public Weather ClimaPrincipal { get; set; }
+        public List<Weather> Climas { get; set; }
+
     }
 }

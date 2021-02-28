@@ -51,6 +51,12 @@ namespace AmericaVirtual_Web.AmericaeReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetUsers", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetUsersResponse")]
         System.Threading.Tasks.Task<string> GetUsersAsync(int Id_User);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetWeathers", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetWeathersResponse")]
+        string GetWeathers(int Id_Weather, int Id_Province);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetWeathers", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetWeathersResponse")]
+        System.Threading.Tasks.Task<string> GetWeathersAsync(int Id_Weather, int Id_Province);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModCountry", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModCountryResponse")]
         string AddModCountry(AmericaVirtual_DataModel.Countries model, bool delete);
         
@@ -143,6 +149,14 @@ namespace AmericaVirtual_Web.AmericaeReference {
         
         public System.Threading.Tasks.Task<string> GetUsersAsync(int Id_User) {
             return base.Channel.GetUsersAsync(Id_User);
+        }
+        
+        public string GetWeathers(int Id_Weather, int Id_Province) {
+            return base.Channel.GetWeathers(Id_Weather, Id_Province);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetWeathersAsync(int Id_Weather, int Id_Province) {
+            return base.Channel.GetWeathersAsync(Id_Weather, Id_Province);
         }
         
         public string AddModCountry(AmericaVirtual_DataModel.Countries model, bool delete) {

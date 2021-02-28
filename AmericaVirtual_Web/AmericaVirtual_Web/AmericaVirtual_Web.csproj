@@ -177,6 +177,8 @@
     <Content Include="Areas\Intranet\Views\Countries\Partial\CountryAddModPartial.cshtml" />
     <Content Include="Areas\Intranet\Views\Provinces\Partial\ProvinceAddModPartial.cshtml" />
     <Content Include="Areas\Intranet\Views\User\Partial\UserAddModPartial.cshtml" />
+    <Content Include="Areas\Intranet\Views\Weather\Index.cshtml" />
+    <Content Include="Areas\Intranet\Views\Weather\Partial\WeatherAddModPartial.cshtml" />
     <None Include="Connected Services\AmericaeReference\AmericaVirtualService.disco" />
     <None Include="Connected Services\AmericaeReference\AmericaVirtualService3.xsd">
       <SubType>Designer</SubType>
@@ -240,6 +242,12 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\Fonts\BebasNeue Bold.otf" />
+    <Content Include="Content\Fonts\BebasNeue Book.otf" />
+    <Content Include="Content\Fonts\BebasNeue Light.otf" />
+    <Content Include="Content\Fonts\BebasNeue Regular.otf" />
+    <Content Include="Content\Fonts\BebasNeue Thin.otf" />
+    <Content Include="Content\Fonts\BebasNeue.otf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -355,7 +363,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Intranet\Data\" />
-    <Folder Include="Areas\Intranet\Views\Weather\" />
     <Folder Include="Views\Countries\" />
     <Folder Include="Views\Home\Partial\" />
   </ItemGroup>

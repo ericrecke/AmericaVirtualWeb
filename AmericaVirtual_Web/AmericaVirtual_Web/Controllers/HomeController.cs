@@ -17,15 +17,28 @@ namespace AmericaVirtual_Web.Controllers
         public ActionResult Index()
         {
             BaseModel model = new BaseModel();
-            if (User.Identity.IsAuthenticated)
-            {
                 var Paises = America.GetCountries();
                 model.Paises = JsonConvert.DeserializeObject<List<Countries>>(Paises);
-                var IdMainProvince = model.Paises.FirstOrDefault().Id;
-                var Provincias = America.GetProvinces(Id_Country: IdMainProvince);
+                var IdMainCountry = model.Paises.FirstOrDefault().Id;
+                var Provincias = America.GetProvinces(Id_Country: IdMainCountry);
                 model.Provincias = JsonConvert.DeserializeObject<List<Provinces>>(Provincias);
-            }
+                var IdMainProvince = model.Provincias.FirstOrDefault().Id;
+                var WeatherActual = America.GetWeathers(Id_Province: IdMainProvince);
+                model.ClimaPrincipal = JsonConvert.DeserializeObject<List<Weather>>(WeatherActual).FirstOrDefault();
             return View(model);
+        }
+
+        public JsonResult GetCountriesIndex()
+        {
+                var CountriesJson = America.GetCountries();
+                var Countries = JsonConvert.DeserializeObject<List<Countries>>(CountriesJson);
+                if (Countries.Count > 0)
+                {
+                    var ModeloList = new System.Web.Mvc.SelectList(Countries, "Id", "Name");
+                    return Json(new { Key = Countries.FirstOrDefault().Id, Tabla = ModeloList }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                    return Json("", JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetProvincesIndex(int Id_Country)

@@ -1,3 +1,4 @@
+using AmericaVirtual_DataModel.Manager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,9 @@ namespace AmericaVirtual_DataModel
         [DataMember]
         public int Id_Province { get; set; }
         [DataMember]
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
+        [DataMember]
+        public EnumTypeWeather TypeWeather { get; set; } = EnumTypeWeather.Soleado;
         [DataMember]
         public decimal Sensation_C { get; set; }
         [DataMember]
@@ -27,8 +30,11 @@ namespace AmericaVirtual_DataModel
         public int Humidity { get; set; }
         [DataMember]
         public int Wind { get; set; }
+        [DataMember]
         public DateTime Date_Add { get; set; } = DateTime.Now;
+        [DataMember]
         public virtual Countries Countries { get; set; }
+        [DataMember]
         public virtual Provinces Provinces { get; set; }
     }
 }

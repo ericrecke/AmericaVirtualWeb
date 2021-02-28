@@ -93,7 +93,7 @@ namespace AmericaVirtualWS
             try
             {
                 var db = new AmericaVirtualContext();
-                var Weathers = db.Weather.Where(x => (Id_Weather == 0 || x.Id == Id_Weather) && (Id_Province == 0 || x.Id_Province == Id_Province)).ToList();
+                var Weathers = db.Weather.Include("Countries").Include("Provinces").Where(x => (Id_Weather == 0 || x.Id == Id_Weather) && (Id_Province == 0 || x.Id_Province == Id_Province)).ToList();
                 return JsonConvert.SerializeObject(Weathers);
             }
             catch (Exception ex)
