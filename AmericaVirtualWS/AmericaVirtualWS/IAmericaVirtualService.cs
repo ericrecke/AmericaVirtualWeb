@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AmericaVirtual_DataModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -20,7 +21,23 @@ namespace AmericaVirtualWS
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         [OperationContract]
-        bool ValidateLogin(string user, string pass);
+        string ValidateLogin(string user, string pass);
+
+        [OperationContract]
+        string GetCountries(int Id_Country);
+        [OperationContract]
+        string GetProvinces(int Id_Province, int Id_Country = 0);
+        [OperationContract]
+        string GetUsers(int Id_User);
+        [OperationContract]
+        string GetWeathers(int Id_Weather, int Id_Province);
+
+        [OperationContract]
+        string AddModCountry(Countries model, bool delete = false);
+        [OperationContract]
+        string AddModProvince(Provinces model, bool delete = false);
+        [OperationContract]
+        string AddModUser(Users model, bool delete = false);
         // TODO: Add your service operations here
     }
 

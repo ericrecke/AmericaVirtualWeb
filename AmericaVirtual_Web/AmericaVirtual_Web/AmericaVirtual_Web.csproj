@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -47,6 +48,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Forloop.HtmlHelpers, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Forloop.HtmlHelpers.1.2.0.0\lib\net45\Forloop.HtmlHelpers.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -133,19 +143,47 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Intranet\Controllers\CountriesController.cs" />
+    <Compile Include="Areas\Intranet\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Intranet\Controllers\ProvincesController.cs" />
+    <Compile Include="Areas\Intranet\Controllers\UserController.cs" />
+    <Compile Include="Areas\Intranet\Controllers\WeatherController.cs" />
+    <Compile Include="Areas\Intranet\IntranetAreaRegistration.cs" />
     <Compile Include="Connected Services\AmericaeReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Base\BaseModel.cs" />
+    <Compile Include="Models\Web_Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Intranet\Views\web.config" />
+    <Content Include="Areas\Intranet\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Intranet\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Intranet\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Intranet\Views\Shared\Partial\MenuPartial.cshtml" />
+    <Content Include="Areas\Intranet\Views\Countries\Index.cshtml" />
+    <Content Include="Areas\Intranet\Views\Provinces\Index.cshtml" />
+    <Content Include="Areas\Intranet\Views\User\Index.cshtml" />
+    <Content Include="Areas\Intranet\Views\User\Perfil.cshtml" />
+    <Content Include="Areas\Intranet\Views\Countries\Partial\CountryAddModPartial.cshtml" />
+    <Content Include="Areas\Intranet\Views\Provinces\Partial\ProvinceAddModPartial.cshtml" />
+    <Content Include="Areas\Intranet\Views\User\Partial\UserAddModPartial.cshtml" />
     <None Include="Connected Services\AmericaeReference\AmericaVirtualService.disco" />
+    <None Include="Connected Services\AmericaeReference\AmericaVirtualService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AmericaeReference\AmericaVirtualService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\AmericaeReference\configuration91.svcinfo" />
     <None Include="Connected Services\AmericaeReference\configuration.svcinfo" />
     <None Include="Connected Services\AmericaeReference\Reference.svcmap">
@@ -280,10 +318,12 @@
     <Content Include="Scripts\src\utils\setAttributes.js" />
     <Content Include="Scripts\src\utils\setStyles.js" />
     <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\sweetalert2.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\web\site.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -308,10 +348,16 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Partial\MenuPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\Intranet\Data\" />
+    <Folder Include="Areas\Intranet\Views\Weather\" />
+    <Folder Include="Views\Countries\" />
+    <Folder Include="Views\Home\Partial\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -374,7 +420,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

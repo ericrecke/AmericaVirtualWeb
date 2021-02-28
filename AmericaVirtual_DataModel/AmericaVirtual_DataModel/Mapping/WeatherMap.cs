@@ -22,6 +22,7 @@ namespace AmericaVirtual_DataModel.Mappings
             this.Property(t => t.Rainfall).HasColumnName("Rainfall");
             this.Property(t => t.Humidity).HasColumnName("Humidity");
             this.Property(t => t.Wind).HasColumnName("Wind");
+            this.Property(t => t.Date_Add).HasColumnName("Date_Add");
             this.HasRequired(t => t.Countries).WithMany(t => t.Weather).HasForeignKey(d => d.Id_Country);
             this.HasRequired(t => t.Provinces).WithMany(t => t.Weather).HasForeignKey(d => d.Id_Province);
         }

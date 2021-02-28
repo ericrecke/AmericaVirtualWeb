@@ -39,6 +39,10 @@ a.navText {
         color: #2D2D30 !important;
     }
 
+a.navText-d {
+    color: black !important;
+}
+
 .av-logo {
     width: 233px;
     height: auto;
@@ -222,11 +226,21 @@ li.weather:not(:last-child) {
 
 /**/
 
-/*New Design Buttons*/
+/*New Design Buttons - Backgrounds*/
+
+.bg-america {
+    background-color: #FF6859;
+    color: #fff;
+}
+
 .btn-outline-america {
     color: #fff;
     border-color: #fff;
 }
+
+    .btn-outline-america.btn-outline-america-bc {
+        border-color: #FF9A90;
+    }
 
     .btn-outline-america:hover {
         color: #fff;
@@ -257,14 +271,14 @@ li.weather:not(:last-child) {
 
 .btn-america {
     color: #fff;
-    border-color: #fff;
     background-color: #FF6859;
+    border-color: #FF6859;
 }
 
     .btn-america:hover {
         color: #fff;
-        background-color: #FF9A90;
-        border-color: #fff;
+        background-color: #A9443A;
+        border-color: #A9443A;
     }
 
     .btn-america:focus, .btn-america.focus {

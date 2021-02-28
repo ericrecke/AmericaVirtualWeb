@@ -1,6 +1,8 @@
-﻿@{
+﻿@using AmericaVirtual_Web.Models;
+@{
     ViewBag.Title = "Inicio";
 }
+@model BaseModel
 
 <div class="row">
     <div class="col-md-12">
@@ -10,18 +12,29 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-body text-center" style="padding-bottom: 0;">
-                <h4 class="c-virtual">Seleccioná la Zona</h4>
-                <hr class="c-virtual" />
-                <div class="form-group">
-                    <label for="country" class="float-left font-weight-bold">País</label>
-                    <input type="text" class="form-control form-control-zone" id="country" style="width:100%;" placeholder="Seleccioná un país">
-                </div>
-                <div class="form-group">
-                    <label for="city" class="float-left font-weight-bold">Ciudad</label>
-                    <input type="text" class="form-control form-control-zone" id="city" style="width:100%;" placeholder="Seleccioná una Ciudad">
-                </div>
-                <br />
-                <button type="submit" class="btn btn-america text-uppercase" style="width:100%;">Buscar</button>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <h4 class="c-virtual">Seleccioná la Zona</h4>
+                    <hr class="c-virtual" />
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Paises, new { @class = "float-left font-weight-bold" })
+                        @Html.DropDownListFor(x => x.Id_Pais, Model.Paises.Select(x => new SelectListItem() { Value = x.Id.ToString(), Text = x.Name }).ToList(), new { @class = "form-control form-control-zone", @style = "width:100%;", @placeholder = "Seleccioná un país" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Provincias, new { @class = "float-left font-weight-bold" })
+                        @Html.DropDownListFor(x => x.Id_Provincia, Model.Provincias.Select(x => new SelectListItem() { Value = x.Id.ToString(), Text = x.Name }).ToList(), new { @class = "form-control form-control-zone", @style = "width:100%;", @placeholder = "Seleccioná una Ciudad" })
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-america text-uppercase" style="width:100%;">Buscar</button>
+                }
+                else
+                {
+                    <h4 class="c-virtual">Bienvenido a America Virtual</h4>
+                    <hr class="c-virtual" />
+                    <p> Para poder seleccionar el país y la ciudad, primero debe estar logueado en el sitio.</p>
+                    <p> El mismo se encuentra en la pestaña arriba a la derecha</p>
+                }
+
             </div>
         </div>
     </div>
@@ -101,3 +114,37 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+        });
+
+        $("#Id_Pais").on('change', function () {
+            debugger
+            $.getJSON("@Url.Action("GetProvincesIndex", "Home", new { Area = ""})", { Id_Country: $(this).val()},
+            function (modelolist) {
+                var select = $("#Id_Provincia");
+                select.empty();
+                if(modelolist.Key)
+                {
+                    $.each(modelolist.Tabla, function (index, itemData) {
+                        select.append($('<option/>', {
+                            value: itemData.Value,
+                            text: itemData.Text
+                        }));
+                    });
+                    $(select).removeAttr('disabled');
+                }
+                else{
+                    select.append($('<option/>', {
+                        value: "",
+                        text: "No hay Resultados"
+                    }));
+                }
+                $(select).selectedIndex = 0;
+            });
+        });
+    </script>
+}

@@ -49,6 +49,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
@@ -63,6 +64,7 @@
   <ItemGroup>
     <Compile Include="AmericaVirtualContext.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Manager\Base_Manager.cs" />
     <Compile Include="Mapping\CountriesMap.cs" />
     <Compile Include="Mapping\ProvincesMap.cs" />
     <Compile Include="Mapping\Services_LogMap.cs" />

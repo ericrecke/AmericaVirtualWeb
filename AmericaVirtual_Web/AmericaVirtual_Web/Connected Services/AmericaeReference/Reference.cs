@@ -28,10 +28,46 @@ namespace AmericaVirtual_Web.AmericaeReference {
         System.Threading.Tasks.Task<AmericaVirtualWS.CompositeType> GetDataUsingDataContractAsync(AmericaVirtualWS.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/ValidateLogin", ReplyAction="http://tempuri.org/IAmericaVirtualService/ValidateLoginResponse")]
-        bool ValidateLogin(string user, string pass);
+        string ValidateLogin(string user, string pass);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/ValidateLogin", ReplyAction="http://tempuri.org/IAmericaVirtualService/ValidateLoginResponse")]
-        System.Threading.Tasks.Task<bool> ValidateLoginAsync(string user, string pass);
+        System.Threading.Tasks.Task<string> ValidateLoginAsync(string user, string pass);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetCountries", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetCountriesResponse")]
+        string GetCountries(int Id_Country);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetCountries", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetCountriesResponse")]
+        System.Threading.Tasks.Task<string> GetCountriesAsync(int Id_Country);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetProvinces", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetProvincesResponse")]
+        string GetProvinces(int Id_Province, int Id_Country);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetProvinces", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetProvincesResponse")]
+        System.Threading.Tasks.Task<string> GetProvincesAsync(int Id_Province, int Id_Country);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetUsers", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetUsersResponse")]
+        string GetUsers(int Id_User);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetUsers", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetUsersResponse")]
+        System.Threading.Tasks.Task<string> GetUsersAsync(int Id_User);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModCountry", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModCountryResponse")]
+        string AddModCountry(AmericaVirtual_DataModel.Countries model, bool delete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModCountry", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModCountryResponse")]
+        System.Threading.Tasks.Task<string> AddModCountryAsync(AmericaVirtual_DataModel.Countries model, bool delete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModProvince", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModProvinceResponse")]
+        string AddModProvince(AmericaVirtual_DataModel.Provinces model, bool delete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModProvince", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModProvinceResponse")]
+        System.Threading.Tasks.Task<string> AddModProvinceAsync(AmericaVirtual_DataModel.Provinces model, bool delete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModUser", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModUserResponse")]
+        string AddModUser(AmericaVirtual_DataModel.Users model, bool delete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModUser", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModUserResponse")]
+        System.Threading.Tasks.Task<string> AddModUserAsync(AmericaVirtual_DataModel.Users model, bool delete);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -77,12 +113,60 @@ namespace AmericaVirtual_Web.AmericaeReference {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public bool ValidateLogin(string user, string pass) {
+        public string ValidateLogin(string user, string pass) {
             return base.Channel.ValidateLogin(user, pass);
         }
         
-        public System.Threading.Tasks.Task<bool> ValidateLoginAsync(string user, string pass) {
+        public System.Threading.Tasks.Task<string> ValidateLoginAsync(string user, string pass) {
             return base.Channel.ValidateLoginAsync(user, pass);
+        }
+        
+        public string GetCountries(int Id_Country) {
+            return base.Channel.GetCountries(Id_Country);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetCountriesAsync(int Id_Country) {
+            return base.Channel.GetCountriesAsync(Id_Country);
+        }
+        
+        public string GetProvinces(int Id_Province, int Id_Country) {
+            return base.Channel.GetProvinces(Id_Province, Id_Country);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetProvincesAsync(int Id_Province, int Id_Country) {
+            return base.Channel.GetProvincesAsync(Id_Province, Id_Country);
+        }
+        
+        public string GetUsers(int Id_User) {
+            return base.Channel.GetUsers(Id_User);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetUsersAsync(int Id_User) {
+            return base.Channel.GetUsersAsync(Id_User);
+        }
+        
+        public string AddModCountry(AmericaVirtual_DataModel.Countries model, bool delete) {
+            return base.Channel.AddModCountry(model, delete);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddModCountryAsync(AmericaVirtual_DataModel.Countries model, bool delete) {
+            return base.Channel.AddModCountryAsync(model, delete);
+        }
+        
+        public string AddModProvince(AmericaVirtual_DataModel.Provinces model, bool delete) {
+            return base.Channel.AddModProvince(model, delete);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddModProvinceAsync(AmericaVirtual_DataModel.Provinces model, bool delete) {
+            return base.Channel.AddModProvinceAsync(model, delete);
+        }
+        
+        public string AddModUser(AmericaVirtual_DataModel.Users model, bool delete) {
+            return base.Channel.AddModUser(model, delete);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddModUserAsync(AmericaVirtual_DataModel.Users model, bool delete) {
+            return base.Channel.AddModUserAsync(model, delete);
         }
     }
 }

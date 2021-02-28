@@ -19,6 +19,7 @@ namespace AmericaVirtual_DataModel.Mappings
             this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.Email).HasColumnName("Email");
             this.Property(t => t.Password).HasColumnName("Password");
+            this.Property(t => t.UserType).HasColumnName("UserType");
             this.Property(t => t.Date_Add).HasColumnName("Date_Add");
         }
     }

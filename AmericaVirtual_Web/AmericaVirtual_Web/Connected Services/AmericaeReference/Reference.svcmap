@@ -22,11 +22,13 @@
     <MetadataSource Address="http://localhost:24227/AmericaVirtualService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AmericaVirtualService.xsd" MetadataType="Schema" ID="0a6bff06-430a-4f07-92aa-4b2032864d01" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd0" />
     <MetadataFile FileName="AmericaVirtualService.disco" MetadataType="Disco" ID="fdfb8cf1-2ecd-4512-86e9-fb3a816f3416" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?disco" />
-    <MetadataFile FileName="AmericaVirtualService1.xsd" MetadataType="Schema" ID="bad3e739-10bf-4c5b-934f-9ff6e4a2fff0" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd1" />
-    <MetadataFile FileName="AmericaVirtualService.wsdl" MetadataType="Wsdl" ID="b9fcac38-bf6c-4d83-bdd1-815ae2bf7c6e" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?wsdl" />
+    <MetadataFile FileName="AmericaVirtualService4.xsd" MetadataType="Schema" ID="1ccb348b-b7b8-4d47-a4bc-59b6b74bc36e" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd4" />
+    <MetadataFile FileName="AmericaVirtualService3.xsd" MetadataType="Schema" ID="7cf3a859-73c4-466e-b8f2-92173fcdd6cc" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd3" />
     <MetadataFile FileName="AmericaVirtualService2.xsd" MetadataType="Schema" ID="344808ab-d9fc-4156-b180-1434466a2465" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AmericaVirtualService1.xsd" MetadataType="Schema" ID="bad3e739-10bf-4c5b-934f-9ff6e4a2fff0" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AmericaVirtualService.xsd" MetadataType="Schema" ID="0a6bff06-430a-4f07-92aa-4b2032864d01" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AmericaVirtualService.wsdl" MetadataType="Wsdl" ID="b9fcac38-bf6c-4d83-bdd1-815ae2bf7c6e" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

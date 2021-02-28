@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using AmericaVirtual_Web.Models;
+@using AmericaVirtual_DataModel.Manager;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,7 +12,9 @@
     <script src="https://kit.fontawesome.com/6dff3e25e6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    @*navbar-inverse navbar-fixed-top*@
+    @{
+        var UserLogged = Web_Helper.GetUsuario();
+    }
     <nav class="navbar navbar-expand-lg navbar-main">
         <div class="container">
             <div class="navbar-header">
@@ -21,37 +26,37 @@
                 </button>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link navText" })</li>
-                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { @class = "nav-link navText" })</li>
-                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link navText" })</li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right ml-auto">
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <button class="btn btn-outline-america text-uppercase" style="font-size:15px;" type="button" id="ddLoginButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Iniciar Sesión <i class="fas fa-user"></i>
-                            </button>
-                            <form class="formLogin dropdown-menu dropdown-menu-right p-4" aria-labelledby="ddLoginButton">
-                                <div class="form-group">
-                                    <label for="mail">Usuario</label>
-                                    <input type="email" class="form-control" id="mail" placeholder="email@hotmail.com">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Contraseña</label>
-                                    <input type="password" class="form-control" id="password" placeholder="Contraseña">
-                                </div>
-                                <button type="submit" class="btn btn-america" style="width:100%;">Iniciar Sesión</button>
-                            </form>
-                        </div>
-                    </li>
-                </ul>
+                @{
+                    if (UserLogged.UserType == EnumTypeUser.Admin)
+                    {
+                        @Html.Partial("~/Areas/Intranet/Views/Shared/Partial/MenuPartial.cshtml")
+                    }
+                    else
+                    {
+                        @Html.Partial("~/Views/Shared/Partial/MenuPartial.cshtml")
+
+                    }
+                }
             </div>
         </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
-        @*<hr />*@
+        <div class="modal" tabindex="-1" role="dialog" id="form-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <footer class="footer">
             <div class="container">
                 <div>
