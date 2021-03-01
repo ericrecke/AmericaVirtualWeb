@@ -23,7 +23,6 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="AmericaVirtualService.disco" MetadataType="Disco" ID="bbbdcf22-5910-4061-863b-b7a0f51d3a5d" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?disco" />
-    <MetadataFile FileName="AmericaVirtualService.xsd" MetadataType="Schema" ID="b6200fa6-871f-41f7-aa71-0a9f2a3db2ca" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd4" />
     <MetadataFile FileName="AmericaVirtualService1.xsd" MetadataType="Schema" ID="4e35179d-1d99-413c-8787-2d895331018f" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd3" />
     <MetadataFile FileName="AmericaVirtualService2.xsd" MetadataType="Schema" ID="4afa1f8e-1d37-49a8-9876-68b57519afb4" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd2" />
     <MetadataFile FileName="AmericaVirtualService3.xsd" MetadataType="Schema" ID="f1060e48-af4a-47f1-88be-1325eec4a79f" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd1" />

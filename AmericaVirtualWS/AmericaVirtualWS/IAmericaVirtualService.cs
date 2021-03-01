@@ -14,32 +14,43 @@ namespace AmericaVirtualWS
     public interface IAmericaVirtualService
     {
 
-        [OperationContract]
-        string GetData(int value);
+        //[OperationContract]
+        //string GetData(int value);
+
+        //[OperationContract]
+        //CompositeType GetDataUsingDataContract(CompositeType composite);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        [WebInvoke(Method = "GET")]
+        string ValidateLogin(string user = "", string pass = "");
 
         [OperationContract]
-        string ValidateLogin(string user, string pass);
-
-        [OperationContract]
+        [WebInvoke(Method = "GET")]
         string GetCountries(int Id_Country);
         [OperationContract]
+        [WebInvoke(Method = "GET")]
         string GetProvinces(int Id_Province, int Id_Country = 0);
         [OperationContract]
+        [WebInvoke(Method = "GET")]
         string GetUsers(int Id_User);
         [OperationContract]
+        [WebInvoke(Method = "GET")]
         string GetWeathers(int Id_Weather, int Id_Province);
         [OperationContract]
+        [WebInvoke(Method = "GET")]
         string GetWeathersWeek(int Id_Weather, int Id_Province);
         [OperationContract]
-        string AddModCountry(Countries model, bool delete = false);
+        [WebInvoke(Method = "POST", UriTemplate = "AddModCountry/{delete=0}")]
+        string AddModCountry(Countries model, string delete = "0");
         [OperationContract]
-        string AddModProvince(Provinces model, bool delete = false);
+        [WebInvoke(Method = "POST", UriTemplate = "AddModProvince/{delete=0}")]
+        string AddModProvince(Provinces model, string delete = "0");
         [OperationContract]
-        string AddModUser(Users model, bool delete = false);
-        // TODO: Add your service operations here
+        [WebInvoke(Method = "POST", UriTemplate = "AddModUser/{delete=0}")]
+        string AddModUser(Users model, string delete = "0");
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "AddModWeather/{delete=0}")]
+        string AddModWeather(Weather model, string delete = "0");
     }
 
 

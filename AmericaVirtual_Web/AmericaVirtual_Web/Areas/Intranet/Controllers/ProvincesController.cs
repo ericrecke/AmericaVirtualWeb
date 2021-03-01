@@ -37,7 +37,9 @@ namespace AmericaVirtual_Web.Areas.Intranet.Controllers
         [Authorize(Roles = "2")]
         public ActionResult UpdateProvince(Provinces model, bool delete = false)
         {
-            var checkSend = America.AddModProvince(model, delete);
+            var borrar = "0";
+            if (delete) borrar = "1";
+             var checkSend = America.AddModProvince(model, borrar);
             return RedirectToAction("Index", "Provinces", new { Area = "Intranet" });
         }
 

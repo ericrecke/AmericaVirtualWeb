@@ -1,0 +1,17 @@
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtualWS.dll.config
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtualWS.dll
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtualWS.pdb
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtual_DataModel.dll
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\EntityFramework.dll
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\EntityFramework.SqlServer.dll
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\Newtonsoft.Json.dll
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtual_DataModel.pdb
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\AmericaVirtual_DataModel.dll.config
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\EntityFramework.xml
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\EntityFramework.SqlServer.xml
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\bin\Newtonsoft.Json.xml
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\obj\Release\AmericaVirtualWS.csprojAssemblyReference.cache
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\obj\Release\AmericaVirtualWS.csproj.CoreCompileInputs.cache
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\obj\Release\AmericaVirtualWS.csproj.CopyComplete
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\obj\Release\AmericaVirtualWS.dll
+C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtualWS\AmericaVirtualWS\obj\Release\AmericaVirtualWS.pdb

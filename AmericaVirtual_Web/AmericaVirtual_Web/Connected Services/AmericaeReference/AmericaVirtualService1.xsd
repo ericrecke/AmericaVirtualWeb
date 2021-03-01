@@ -1,33 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel.Manager" />
-  <xs:complexType name="Countries">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Date_Add" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Countries" nillable="true" type="tns:Countries" />
-  <xs:complexType name="Provinces">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Countries" nillable="true" type="tns:Countries" />
-      <xs:element minOccurs="0" name="Date_Add" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Id_Country" type="xs:int" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Provinces" nillable="true" type="tns:Provinces" />
-  <xs:complexType name="Users">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Date_Add" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel.Manager" minOccurs="0" name="UserType" type="q1:EnumTypeUser" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Users" nillable="true" type="tns:Users" />
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel.Manager" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel.Manager" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="EnumTypeUser">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Usuario">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Admin">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTypeUser" nillable="true" type="tns:EnumTypeUser" />
+  <xs:simpleType name="EnumTypeWeather">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Soleado">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Nublado">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Parcialmente_Nublado">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lluvia">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lluvia_Electrica">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Nieve">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTypeWeather" nillable="true" type="tns:EnumTypeWeather" />
 </xs:schema>

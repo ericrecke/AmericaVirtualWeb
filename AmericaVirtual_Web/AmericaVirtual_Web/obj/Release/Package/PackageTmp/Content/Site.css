@@ -1,0 +1,373 @@
+﻿body {
+    /*padding-top: 50px;*/
+    padding-bottom: 20px;
+    background-color: #F2F2F1;    
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('Fonts/BebasNeue.otf') format('opentype'), url('Fonts/BebasNeue Bold.otf') format('opentype'), url('Fonts/BebasNeue Book.otf') format('opentype'), url('Fonts/BebasNeue Light.otf') format('opentype'), url('Fonts/BebasNeue Regular.otf') format('opentype'), url('Fonts/BebasNeue Thin.otf') format('opentype');
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*Layout*/
+
+.navbar-main {
+    background-color: #FF6859;
+    border-color: #FF6859;
+}
+
+a.navText {
+    color: white !important;
+}
+
+    a.navText:hover {
+        color: #2D2D30 !important;
+    }
+
+a.navText-d {
+    color: black !important;
+}
+
+.av-logo {
+    width: 233px;
+    height: auto;
+    margin-top: -7px;
+}
+
+.av-logo-footer {
+    width: 150px;
+    height: auto;
+    margin: 0;
+    fill: #ffffff;
+}
+
+.av-logo .av-logo-class {
+    fill: #ffffff;
+}
+
+.navbar-toggler {
+    color: rgba(255,255,255,.5) !important;
+    border-color: rgba(255,255,255,.8) !important;
+}
+
+.formLogin {
+    width: 300px;
+    margin-top: 10px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #131313;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/*End Layout*/
+
+/*
+    Index Page
+*/
+
+hr.c-america {
+    border: 1px solid #FF9A90;
+}
+
+.c-virtual {
+    color: #314284;
+}
+
+hr.c-virtual {
+    /*    margin: 0;*/
+    border: 1px solid #314284;
+}
+
+th.c-virtual {
+    border-bottom: 2px solid #314284 !important;
+}
+
+h4.c-virtual {
+    color: #314284;
+}
+
+.form-control-zone {
+    max-width: 100%;
+}
+
+ul.weather {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+li.weather {
+    position: relative;
+    -webkit-box-flex: 1 1 0;
+    -ms-flex: 1 1 0;
+    flex: 1 1 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 104px;
+    font-size: 0.75rem;
+    padding: 15px 0;
+    text-align: center;
+    margin: 0;
+    /*margin: 0 9px;*/
+    /*    border: 1px solid #ddd;*/
+}
+
+.c-gray {
+    color: #B7B7B7;
+}
+
+.t-weather {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+    .t-weather span {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+.t-font-virtual {
+    font-family: BebasNeue;
+}
+
+.t-weather-s {
+    font-size: 20px;
+}
+
+.t-weather-l {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+    .t-weather-l span {
+        font-size: 70px;
+    }
+
+li.weather:not(:last-child) {
+    border-right: 1px solid #ddd;
+}
+
+#weather-icon {
+    width: 75%;
+}
+
+.weather-day {
+    width: 100%;
+    padding-bottom: 15px;
+    font-size: 0.8125rem;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.weather-day-title {
+    font-size: 25px;
+    letter-spacing: 10px;
+    font-weight: 500;
+    color: #314284;
+}
+
+.weather-img {
+    padding-bottom: 30px;
+    position: relative;
+    width: 100%;
+    contain: content;
+}
+
+#weather-icon-day {
+    width: 50%;
+    padding: 5px;
+    position: relative;
+    height: 50%;
+    contain: content;
+}
+
+.weather-day-temperature {
+    padding-bottom: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.card {
+    min-height: 360px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+/**/
+
+/*New Design Buttons - Backgrounds*/
+
+.l-spacing-1{
+    letter-spacing: 1px;
+}
+.l-spacing-2 {
+    letter-spacing: 2px;
+}
+.l-spacing-3 {
+    letter-spacing: 3px;
+}
+.l-spacing-4 {
+    letter-spacing: 4px;
+}
+.l-spacing-5 {
+    letter-spacing: 5px;
+}
+.mt-5n {
+    margin-top: -5px;
+}
+.mt-10n {
+    margin-top: -10px;
+}
+.mt-20n {
+    margin-top: -20px;
+}
+.mt-40n{
+    margin-top: -40px;
+}
+
+.table-bordered-virtual {
+    border: 1px solid #314284;
+}
+
+    .table-bordered-virtual th,
+    .table-bordered-virtual td {
+        border: 1px solid #314284;
+    }
+
+    .table-bordered-virtual thead th,
+    .table-bordered-virtual thead td {
+        border-bottom-width: 2px;
+    }
+
+.bg-america {
+    background-color: #FF6859;
+    color: #fff;
+}
+
+.btn-outline-america {
+    color: #fff;
+    border-color: #fff;
+}
+
+    .btn-outline-america.btn-outline-america-bc {
+        border-color: #FF9A90;
+    }
+
+    .btn-outline-america:hover {
+        color: #fff;
+        background-color: #FF9A90;
+        border-color: #fff;
+    }
+
+    .btn-outline-america:focus, .btn-outline-america.focus {
+        box-shadow: 0 0 0 0.2rem rgba(133, 60, 53, 0.5);
+    }
+
+    .btn-outline-america.disabled, .btn-outline-america:disabled {
+        color: #fff;
+        background-color: transparent;
+    }
+
+    .btn-outline-america:not(:disabled):not(.disabled):active, .btn-outline-america:not(:disabled):not(.disabled).active,
+    .show > .btn-outline-america.dropdown-toggle {
+        color: #fff;
+        background-color: #FF6859;
+        border-color: #fff;
+    }
+
+        .btn-outline-america:not(:disabled):not(.disabled):active:focus, .btn-outline-america:not(:disabled):not(.disabled).active:focus,
+        .show > .btn-outline-america.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(133, 60, 53, 0.1);
+        }
+
+.btn-america {
+    color: #fff;
+    background-color: #FF6859;
+    border-color: #FF6859;
+}
+
+    .btn-america:hover {
+        color: #fff;
+        background-color: #A9443A;
+        border-color: #A9443A;
+    }
+
+    .btn-america:focus, .btn-america.focus {
+        box-shadow: 0 0 0 0.2rem rgba(133, 60, 53, 0.5);
+    }
+
+    .btn-america.disabled, .btn-america:disabled {
+        color: #fff;
+        background-color: transparent;
+    }
+
+    .btn-america:not(:disabled):not(.disabled):active, .btn-america:not(:disabled):not(.disabled).active,
+    .show > .btn-america.dropdown-toggle {
+        color: #fff;
+        background-color: #FF6859;
+        border-color: #fff;
+    }
+
+        .btn-america:not(:disabled):not(.disabled):active:focus, .btn-america:not(:disabled):not(.disabled).active:focus,
+        .show > .btn-america.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(133, 60, 53, 0.1);
+        }
+
+/*End Design Buttons*/

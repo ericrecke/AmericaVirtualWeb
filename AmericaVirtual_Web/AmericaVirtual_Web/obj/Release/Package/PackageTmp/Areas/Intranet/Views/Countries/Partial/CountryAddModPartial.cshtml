@@ -1,0 +1,24 @@
+﻿@using AmericaVirtual_DataModel
+@{
+    Layout = null;
+}
+@model Countries
+
+<div class="card">
+    <div class="card-body">
+        @using (Html.BeginForm("UpdateCountry", "Countries", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal form-material", role = "form" }))
+        {
+            <div class="form-group">
+                @Html.LabelFor(x => x.Name, "Nombre")
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control form-control-zone", @style = "width:100%;", @placeholder = "Nombre" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Date_Add, "Fecha Agregado")
+                @Html.TextBoxFor(x => x.Date_Add, "{0:yyyy-MM-dd}", new { @class = "form-control form-control-zone", @type = "date", @style = "width:100%;" })
+            </div>
+            @Html.HiddenFor(x => x.Id)
+            <br />
+            <button type="submit" class="btn btn-america text-uppercase" style="width:100%;">Guardar</button>
+        }
+    </div>
+</div>

@@ -38,7 +38,9 @@ namespace AmericaVirtual_Web.Areas.Intranet.Controllers
         [Authorize(Roles = "2")]
         public ActionResult UpdateWeather(Weather model, bool delete = false)
         {
-            var checkSend = America.AddModWeather(model, delete);
+            var borrar = "0";
+            if (delete) borrar = "1";
+            var checkSend = America.AddModWeather(model, borrar);
             return RedirectToAction("Index", "Weather", new { Area = "Intranet" });
         }
     }

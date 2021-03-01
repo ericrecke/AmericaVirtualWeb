@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.ServiceModel.Activation;
+//using System.ServiceModel.Activation;
 using System.Web;
 using System.Web.Routing;
 using System.Web.Security;
@@ -15,7 +16,8 @@ namespace AmericaVirtualWS
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            //RouteTable.Routes.Add(new ServiceRoute("PlenarioServices", new WebServiceHostFactory(), typeof(AmericaVirtualService)));
+            
+            RouteTable.Routes.Add(new ServiceRoute("AmericaVirtualService", new WebServiceHostFactory(), typeof(AmericaVirtualService)));
             var currentConnection = ConfigurationManager.AppSettings["CurrentConnection"];
             string connStr = ConfigurationManager.ConnectionStrings[currentConnection].ConnectionString;
         }

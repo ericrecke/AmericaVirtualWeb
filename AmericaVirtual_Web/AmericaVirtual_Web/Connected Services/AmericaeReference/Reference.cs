@@ -15,18 +15,6 @@ namespace AmericaVirtual_Web.AmericaeReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AmericaeReference.IAmericaVirtualService")]
     public interface IAmericaVirtualService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetData", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetDataResponse")]
-        string GetData(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetData", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetDataUsingDataContractResponse")]
-        AmericaVirtualWS.CompositeType GetDataUsingDataContract(AmericaVirtualWS.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IAmericaVirtualService/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<AmericaVirtualWS.CompositeType> GetDataUsingDataContractAsync(AmericaVirtualWS.CompositeType composite);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/ValidateLogin", ReplyAction="http://tempuri.org/IAmericaVirtualService/ValidateLoginResponse")]
         string ValidateLogin(string user, string pass);
         
@@ -64,22 +52,28 @@ namespace AmericaVirtual_Web.AmericaeReference {
         System.Threading.Tasks.Task<string> GetWeathersWeekAsync(int Id_Weather, int Id_Province);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModCountry", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModCountryResponse")]
-        string AddModCountry(AmericaVirtual_DataModel.Countries model, bool delete);
+        string AddModCountry(AmericaVirtual_DataModel.Countries model, string delete);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModCountry", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModCountryResponse")]
-        System.Threading.Tasks.Task<string> AddModCountryAsync(AmericaVirtual_DataModel.Countries model, bool delete);
+        System.Threading.Tasks.Task<string> AddModCountryAsync(AmericaVirtual_DataModel.Countries model, string delete);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModProvince", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModProvinceResponse")]
-        string AddModProvince(AmericaVirtual_DataModel.Provinces model, bool delete);
+        string AddModProvince(AmericaVirtual_DataModel.Provinces model, string delete);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModProvince", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModProvinceResponse")]
-        System.Threading.Tasks.Task<string> AddModProvinceAsync(AmericaVirtual_DataModel.Provinces model, bool delete);
+        System.Threading.Tasks.Task<string> AddModProvinceAsync(AmericaVirtual_DataModel.Provinces model, string delete);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModUser", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModUserResponse")]
-        string AddModUser(AmericaVirtual_DataModel.Users model, bool delete);
+        string AddModUser(AmericaVirtual_DataModel.Users model, string delete);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModUser", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModUserResponse")]
-        System.Threading.Tasks.Task<string> AddModUserAsync(AmericaVirtual_DataModel.Users model, bool delete);
+        System.Threading.Tasks.Task<string> AddModUserAsync(AmericaVirtual_DataModel.Users model, string delete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModWeather", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModWeatherResponse")]
+        string AddModWeather(AmericaVirtual_DataModel.Weather model, string delete);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmericaVirtualService/AddModWeather", ReplyAction="http://tempuri.org/IAmericaVirtualService/AddModWeatherResponse")]
+        System.Threading.Tasks.Task<string> AddModWeatherAsync(AmericaVirtual_DataModel.Weather model, string delete);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -107,22 +101,6 @@ namespace AmericaVirtual_Web.AmericaeReference {
         
         public AmericaVirtualServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
-        }
-        
-        public AmericaVirtualWS.CompositeType GetDataUsingDataContract(AmericaVirtualWS.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
-        }
-        
-        public System.Threading.Tasks.Task<AmericaVirtualWS.CompositeType> GetDataUsingDataContractAsync(AmericaVirtualWS.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
         public string ValidateLogin(string user, string pass) {
@@ -173,28 +151,36 @@ namespace AmericaVirtual_Web.AmericaeReference {
             return base.Channel.GetWeathersWeekAsync(Id_Weather, Id_Province);
         }
         
-        public string AddModCountry(AmericaVirtual_DataModel.Countries model, bool delete) {
+        public string AddModCountry(AmericaVirtual_DataModel.Countries model, string delete) {
             return base.Channel.AddModCountry(model, delete);
         }
         
-        public System.Threading.Tasks.Task<string> AddModCountryAsync(AmericaVirtual_DataModel.Countries model, bool delete) {
+        public System.Threading.Tasks.Task<string> AddModCountryAsync(AmericaVirtual_DataModel.Countries model, string delete) {
             return base.Channel.AddModCountryAsync(model, delete);
         }
         
-        public string AddModProvince(AmericaVirtual_DataModel.Provinces model, bool delete) {
+        public string AddModProvince(AmericaVirtual_DataModel.Provinces model, string delete) {
             return base.Channel.AddModProvince(model, delete);
         }
         
-        public System.Threading.Tasks.Task<string> AddModProvinceAsync(AmericaVirtual_DataModel.Provinces model, bool delete) {
+        public System.Threading.Tasks.Task<string> AddModProvinceAsync(AmericaVirtual_DataModel.Provinces model, string delete) {
             return base.Channel.AddModProvinceAsync(model, delete);
         }
         
-        public string AddModUser(AmericaVirtual_DataModel.Users model, bool delete) {
+        public string AddModUser(AmericaVirtual_DataModel.Users model, string delete) {
             return base.Channel.AddModUser(model, delete);
         }
         
-        public System.Threading.Tasks.Task<string> AddModUserAsync(AmericaVirtual_DataModel.Users model, bool delete) {
+        public System.Threading.Tasks.Task<string> AddModUserAsync(AmericaVirtual_DataModel.Users model, string delete) {
             return base.Channel.AddModUserAsync(model, delete);
+        }
+        
+        public string AddModWeather(AmericaVirtual_DataModel.Weather model, string delete) {
+            return base.Channel.AddModWeather(model, delete);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddModWeatherAsync(AmericaVirtual_DataModel.Weather model, string delete) {
+            return base.Channel.AddModWeatherAsync(model, delete);
         }
     }
 }

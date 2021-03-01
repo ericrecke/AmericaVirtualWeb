@@ -1,0 +1,146 @@
+﻿@using AmericaVirtual_DataModel;
+@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Areas/Intranet/Views/Shared/_Layout.cshtml";
+}
+@model List<Users>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3 id="indexTitle" class="mt-3 text-uppercase text-center">Listado de Usuarios</h3>
+        <hr class="c-america" />
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                @{
+                    if (Model == null)
+                    {
+                        <h1 class="text-center"> Atención </h1>
+                        <h4 class="text-center"> No se encuentran datos para mostrar.</h4>
+                    }
+                    else
+                    {
+                        <div class="btn-group float-right mb-3" role="group" aria-label="Buttons Crud">
+                            <button type="button" class="btn btn-success btnadd">Agregar</button>
+                            <button type="button" class="btn btn-america btnmod">Modificar</button>
+                            <button type="button" class="btn btn-danger btndel">Eliminar</button>
+                        </div>
+
+                        <input class="form-control mb-3" id="FilterInput" type="text" placeholder="Buscar..">
+
+                        <table class="table table-bordered-virtual table-hover" id="tableUsers" data-toggle="table" data-search="true" data-filter-control="true">
+                            <thead>
+                                <tr>
+                                    <th class="c-virtual" scope="col">Id</th>
+                                    <th class="c-virtual" scope="col">Nombre</th>
+                                    <th class="c-virtual" scope="col">Email</th>
+                                    <th class="c-virtual" scope="col">Fecha Agregado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableContent">
+                                @{
+                                    foreach (var User in Model)
+                                    {
+                                        <tr class="clickable-row" data-id="@User.Id">
+                                            <td>@User.Id</td>
+                                            <td>@User.Name</td>
+                                            <td>@User.Email</td>
+                                            <td>@User.Date_Add.ToShortDateString()</td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var IdSelected = 0;
+        $(document).ready(function () {
+            $("#FilterInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#tableContent tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+
+        $('#tableUsers').on('click', '.clickable-row', function (event) {
+            if ($(this).hasClass('bg-america')) {
+                $(this).removeClass('bg-america');
+            } else {
+                $(this).addClass('bg-america').siblings().removeClass('bg-america');
+            }
+        });
+
+        $("tbody tr").on('click', function () {
+            debugger
+            IdSelected = $(this).data('id');
+        });
+
+        $(".btnadd").click(function () {
+            AddMod();
+        });
+
+        $(".btnmod").click(function () {
+            if (IdSelected !== 0)
+            AddMod(IdSelected);
+        });
+
+        $(".btndel").click(function () {
+            if (IdSelected !== 0) {
+                ShowSweetAlert("Eliminar", "¿Estas seguro de Eliminar el Usuario con Id: " + IdSelected + "?", "warning", true).then((result) => {
+                    debugger
+                    if (result) {
+                        var mymodel =@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(new Users(), Newtonsoft.Json.Formatting.Indented));
+                        mymodel.Id = IdSelected;
+                        $.ajax({
+                            type: "POST",
+                            url: '@Url.Action("UpdateUser", "Provinces", new { Area = "Intranet" })' + "?delete=true",
+                            data: JSON.stringify(mymodel),
+                            contentType: 'application/json',
+                            success: function (response) {
+                                ShowSweetAlert("Eliminar", "Se eleminó correctamente", "success").then((result) => {
+                                    location.reload();
+                                });
+                            },
+                            error: function (response) {
+                                alert(response.responseText);
+                            }
+                        });
+                    }
+                });
+            }
+            else {
+                ShowSweetAlert("Eliminar", "No seleccionó ningun valor de la tabla.", "warning")
+            }
+        });
+
+        function AddMod(id) {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("AddMod", "User", new { Area = "Intranet" })',
+                    data: '{Id: "' + id + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                        $('#form-modal .modal-body').html(response);
+                        $('#form-modal .modal-title').html('AddMod - País');
+                        $('#form-modal').modal('show');
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+        }
+    </script>
+}

@@ -1,0 +1,33 @@
+﻿@using AmericaVirtual_DataModel
+@using AmericaVirtual_Web.Models
+
+@model Weather
+
+@if (Model != null)
+{
+    var ClimaAct = Model;
+    <div class="row">
+        <div class="col-md-6">
+            <p class="c-gray mb-0">@ClimaAct.Countries.Name</p>
+            <p class="c-gray mb-3 t-weather-s"><span>@ClimaAct.Provinces.Name</span></p>
+            <p class="t-weather l-spacing-3 text-uppercase mb-0"><span>@ClimaAct.Date.ToString("dddd")</span></p>
+            <p class="t-weather l-spacing-1 text-uppercase">@ClimaAct.TypeWeather.ToString().Replace("_", " ")</p>
+        </div>
+        <div class="col-md-6">
+            <img class="mx-auto d-block" id="weather-icon" src="@Web_Helper.GetImage(ClimaAct.TypeWeather)" alt="Sol" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <p class="t-weather-l mt-40n"><span>@ClimaAct.Sensation_C.ToString().Replace(",", ".")</span> ℃</p>
+            <p class="t-weather mt-5n l-spacing-5"><span>@ClimaAct.Sensation_F.ToString().Replace(",", ".")</span> °F</p>
+        </div>
+        <div class="col-md-7 pt-4">
+            <p style="text-align:end;">
+                Prob. de precipitaciones: @ClimaAct.Rainfall %<br />
+                Humedad: @ClimaAct.Humidity %<br />
+                Viento: a @ClimaAct.Wind km/h.
+            </p>
+        </div>
+    </div>
+}

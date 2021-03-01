@@ -130,12 +130,12 @@ namespace AmericaVirtualWS
             db.SaveChanges();
         }
 
-        public string AddModCountry(Countries model, bool delete = false)
+        public string AddModCountry(Countries model, string delete = "0")
         {
             try
             {
                 var db = new AmericaVirtualContext();
-                if (delete)
+                if (delete != "0")
                 {
                     var modDel = db.Countries.Where(x => x.Id == model.Id).FirstOrDefault();
                     db.Countries.Remove(modDel);
@@ -163,12 +163,12 @@ namespace AmericaVirtualWS
                 return "0";
             }
         }
-        public string AddModProvince(Provinces model, bool delete = false)
+        public string AddModProvince(Provinces model, string delete = "0")
         {
             try
             {
                 var db = new AmericaVirtualContext();
-                if (delete)
+                if (delete != "0")
                 {
                     var modDel = db.Provinces.Where(x => x.Id == model.Id).FirstOrDefault();
                     db.Provinces.Remove(modDel);
@@ -197,12 +197,12 @@ namespace AmericaVirtualWS
             }
         }
 
-        public string AddModUser(Users model, bool delete = false)
+        public string AddModUser(Users model, string delete = "0")
         {
             try
             {
                 var db = new AmericaVirtualContext();
-                if (delete)
+                if (delete != "0")
                 {
                     var modDel = db.Users.Where(x => x.Id == model.Id).FirstOrDefault();
                     db.Users.Remove(modDel);
@@ -230,12 +230,12 @@ namespace AmericaVirtualWS
                 return "0";
             }
         }
-        public string AddModWeather(Weather model, bool delete = false)
+        public string AddModWeather(Weather model, string delete = "0")
         {
             try
             {
                 var db = new AmericaVirtualContext();
-                if (delete)
+                if (delete != "0")
                 {
                     var modDel = db.Weather.Where(x => x.Id == model.Id).FirstOrDefault();
                     db.Weather.Remove(modDel);

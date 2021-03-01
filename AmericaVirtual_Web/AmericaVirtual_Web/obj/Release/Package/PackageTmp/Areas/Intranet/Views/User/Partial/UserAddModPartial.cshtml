@@ -1,0 +1,38 @@
+﻿@using AmericaVirtual_DataModel
+@using AmericaVirtualWS
+@using Newtonsoft.Json
+@using AmericaVirtual_DataModel.Manager
+@{
+    Layout = null;
+}
+@model Users
+
+<div class="card">
+    <div class="card-body">
+        @using (Html.BeginForm("UpdateUser", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal form-material", role = "form" }))
+        {
+            <div class="form-group">
+                @Html.LabelFor(x => x.Name, "Nombre")
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control form-control-zone", @style = "width:100%;", @placeholder = "Nombre" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Email, "Email")
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control form-control-zone", @type = "email", @style = "width:100%;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Password, "Contraseña")
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control form-control-zone", @type = "password", @style = "width:100%;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Date_Add, "Fecha Agregado")
+                @Html.TextBoxFor(x => x.Date_Add, "{0:yyyy-MM-dd}", new { @class = "form-control form-control-zone", @type = "date", @style = "width:100%;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.UserType, "Tipo de Usuario")
+                @Html.EnumDropDownListFor(x => x.UserType, new { @class = "form-control form-control-zone", @style = "width:100%;", @placeholder = "Seleccioná un país" })
+            </div>
+            @Html.HiddenFor(x => x.Id)
+            <button type="submit" class="btn btn-america text-uppercase" style="width:100%;">Guardar</button>
+        }
+    </div>
+</div>
