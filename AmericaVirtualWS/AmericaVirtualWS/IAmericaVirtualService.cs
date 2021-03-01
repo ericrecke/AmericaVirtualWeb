@@ -31,7 +31,8 @@ namespace AmericaVirtualWS
         string GetUsers(int Id_User);
         [OperationContract]
         string GetWeathers(int Id_Weather, int Id_Province);
-
+        [OperationContract]
+        string GetWeathersWeek(int Id_Weather, int Id_Province);
         [OperationContract]
         string AddModCountry(Countries model, bool delete = false);
         [OperationContract]

@@ -1,6 +1,7 @@
 using AmericaVirtual_DataModel.Manager;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -21,8 +22,10 @@ namespace AmericaVirtual_DataModel
         [DataMember]
         public EnumTypeWeather TypeWeather { get; set; } = EnumTypeWeather.Soleado;
         [DataMember]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:0.0}")]
         public decimal Sensation_C { get; set; }
         [DataMember]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:0.0}")]
         public decimal Sensation_F { get; set; }
         [DataMember]
         public int Rainfall { get; set; }

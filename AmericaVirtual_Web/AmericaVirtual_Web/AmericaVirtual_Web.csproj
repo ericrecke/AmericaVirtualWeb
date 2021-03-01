@@ -145,6 +145,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Intranet\Controllers\CountriesController.cs" />
     <Compile Include="Areas\Intranet\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Intranet\Controllers\PartialController.cs" />
     <Compile Include="Areas\Intranet\Controllers\ProvincesController.cs" />
     <Compile Include="Areas\Intranet\Controllers\UserController.cs" />
     <Compile Include="Areas\Intranet\Controllers\WeatherController.cs" />
@@ -359,10 +360,13 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\LoginPartial.cshtml" />
     <Content Include="Views\Shared\Partial\MenuPartial.cshtml" />
+    <Content Include="Views\Home\WeatherPartial.cshtml" />
+    <Content Include="Views\Home\WeatherListPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Intranet\Data\" />
+    <Folder Include="Areas\Intranet\Views\Parial\" />
     <Folder Include="Views\Countries\" />
     <Folder Include="Views\Home\Partial\" />
   </ItemGroup>

@@ -32,11 +32,11 @@
             </div>
             <div class="form-group">
                 @Html.LabelFor(x => x.Sensation_C, "°C")
-                @Html.TextBoxFor(x => x.Sensation_C, new { @class = "form-control form-control-zone", @type = "number", @style = "width:100%;", @placeholder = "0°C" })
+                @Html.TextBoxFor(x => x.Sensation_C, "{0:n1}", new { @class = "form-control form-control-zone", @style = "width:100%;", @placeholder = "0°C" })
             </div>
             <div class="form-group">
                 @Html.LabelFor(x => x.Sensation_F, "°F")
-                @Html.TextBoxFor(x => x.Sensation_F, new { @class = "form-control form-control-zone", @type = "number", @style = "width:100%;", @placeholder = "0°F" })
+                @Html.TextBoxFor(x => x.Sensation_F, "{0:n1}", new { @class = "form-control form-control-zone", @style = "width:100%;", @placeholder = "0°F" })
             </div>
             <div class="form-group">
                 @Html.LabelFor(x => x.Date_Add, "Fecha Agregado")

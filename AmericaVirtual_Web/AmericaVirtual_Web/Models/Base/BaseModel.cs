@@ -1,4 +1,5 @@
 ﻿using AmericaVirtual_DataModel;
+using AmericaVirtual_DataModel.Manager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,5 @@ namespace AmericaVirtual_Web.Models
 
         public Weather ClimaPrincipal { get; set; }
         public List<Weather> Climas { get; set; }
-
     }
 }

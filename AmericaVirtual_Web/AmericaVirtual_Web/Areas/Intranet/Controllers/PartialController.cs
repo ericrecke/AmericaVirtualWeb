@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace AmericaVirtual_Web.Areas.Intranet.Controllers
+{
+    public class PartialController : Controller
+    {
+        // GET: Intranet/Parial
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public static string RenderPartialViewToString(Controller controller,string viewName, object model)
+        {
+            if (string.IsNullOrEmpty(viewName))
+                viewName = controller.ControllerContext.RouteData.GetRequiredString("action");
+            controller.ViewData.Model = model;
+            using (var sw = new StringWriter())
+            {
+                ViewEngineResult viewResult = System.Web.Mvc.ViewEngines.Engines.FindPartialView(controller.ControllerContext, viewName);
+                var viewContext = new ViewContext(controller.ControllerContext, viewResult.View, controller.ViewData, controller.TempData, sw);
+                viewResult.View.Render(viewContext, sw);
+                return sw.GetStringBuilder().ToString();
+            }
+        }
+    }
+}

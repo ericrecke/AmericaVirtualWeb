@@ -25,7 +25,7 @@
                         @Html.DropDownListFor(x => x.Id_Provincia, Model.Provincias.Select(x => new SelectListItem() { Value = x.Id.ToString(), Text = x.Name }).ToList(), new { @class = "form-control form-control-zone", @style = "width:100%;", @placeholder = "Seleccioná una Ciudad" })
                     </div>
                     <br />
-                    <button type="submit" class="btn btn-america text-uppercase" style="width:100%;">Buscar</button>
+                    <button type="submit" id="SearchClima" class="btn btn-america text-uppercase" style="width:100%;">Buscar</button>
                 }
                 else
                 {
@@ -44,38 +44,10 @@
                 <div class="container">
                     <h4 class="text-center c-virtual">Reporte del Clima</h4>
                     <hr class="c-virtual">
-                    <div class="row">
-                        <div class="col-md-6">
-                            @if (Model.ClimaPrincipal != null)
-                            {
-                                <p class="c-gray mb-0">@Model.ClimaPrincipal.Countries.Name</p>
-                                <p class="c-gray mb-3 t-weather-s"><span>@Model.ClimaPrincipal.Provinces.Name</span></p>
-                                <p class="t-weather l-spacing-3 text-uppercase mb-0"><span>@Model.ClimaPrincipal.Date.ToString("dddd")</span></p>
-                                <p class="t-weather l-spacing-1 text-uppercase">@Model.ClimaPrincipal.TypeWeather.ToString().Replace("_"," ")</p>
-
-                            }
-
-                            @*<p class="c-gray">País<br /><span>Ciudad</span></p>
-                                <p class="t-weather text-uppercase"><span>Viernes</span></p>
-                                <p class="t-weather text-uppercase">Soleado</p>*@
-                        </div>
-                        <div class="col-md-6">
-                            <img class="mx-auto d-block" id="weather-icon" src="~/Content/Images/Weather-Icons/Sun.png" alt="Sol" />
-                        </div>
+                    <div id="WeatherView">
+                        @Html.Partial("~/Views/Home/WeatherPartial.cshtml", Model.ClimaPrincipal)
                     </div>
-                    <div class="row">
-                        <div class="col-md-5">
-                            <p class="t-weather-l mt-40n"><span>22</span> ℃</p>
-                            <p class="t-weather mt-5n l-spacing-5"><span>71.6</span> °F</p>
-                        </div>
-                        <div class="col-md-7 pt-4">
-                            <p style="text-align:end;">
-                                Prob. de precipitaciones: 0%<br />
-                                Humedad: 54%<br />
-                                Viento: a 10 km/h.
-                            </p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -86,39 +58,10 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-body">
-                <ul class="weather">
-                    <li class="weather day1">
-                        <span class="weather-day t-font-virtual">Dia</span>
-                        <span class="weather-img"><img class="mx-auto d-block" id="weather-icon-day" src="~/Content/Images/Weather-Icons/Cloudy.png" alt="Sol" /></span>
-                        <span class="weather-day-temperature">00.0 °C</span>
-                        <span class="weather-day-temperature">00.0 °F</span>
-                    </li>
-                    <li class="weather day2">
-                        <span class="weather-day t-font-virtual">Dia</span>
-                        <span class="weather-img"><img class="mx-auto d-block" id="weather-icon-day" src="~/Content/Images/Weather-Icons/ElectricRain.png" alt="Sol" /></span>
-                        <span class="weather-day-temperature">00.0 °C</span>
-                        <span class="weather-day-temperature">00.0 °F</span>
-                    </li>
-                    <li class="weather day3">
-                        <span class="weather-day t-font-virtual">Dia</span>
-                        <span class="weather-img"><img class="mx-auto d-block" id="weather-icon-day" src="~/Content/Images/Weather-Icons/Partly_Cloudy.png" alt="Sol" /></span>
-                        <span class="weather-day-temperature">00.0 °C</span>
-                        <span class="weather-day-temperature">00.0 °F</span>
-                    </li>
-                    <li class="weather day4">
-                        <span class="weather-day t-font-virtual">Dia</span>
-                        <span class="weather-img"><img class="mx-auto d-block" id="weather-icon-day" src="~/Content/Images/Weather-Icons/Rain.png" alt="Sol" /></span>
-                        <span class="weather-day-temperature">00.0 °C</span>
-                        <span class="weather-day-temperature">00.0 °F</span>
-                    </li>
-                    <li class="weather day5">
-                        <span class="weather-day t-font-virtual">Dia</span>
-                        <span class="weather-img"><img class="mx-auto d-block" id="weather-icon-day" src="~/Content/Images/Weather-Icons/Snow.png" alt="Sol" /></span>
-                        <span class="weather-day-temperature">00.0 °C</span>
-                        <span class="weather-day-temperature">00.0 °F</span>
-                    </li>
-                </ul>
+            <div class="card-body pb-2">
+                <div id="ListWeathersView">
+                    @Html.Partial("~/Views/Home/WeatherListPartial.cshtml", Model.Climas)
+                </div>
             </div>
         </div>
     </div>
@@ -152,5 +95,23 @@
                 $(select).selectedIndex = 0;
             });
         });
+
+        $("#SearchClima").click(function () {
+            $.getJSON("@Url.Action("ChangeWeathersSingleIndex", "Home", new { Area = ""})", { Id_Country: $("#Id_Pais").val(), Id_Provincia: $("#Id_Provincia").val() },
+            function (modelolist) {
+                var select1 = $("#WeatherView");
+                var select2 = $("#ListWeathersView");
+                if(modelolist.Key)
+                {
+                select1.empty();
+                select2.empty();
+                    $("#WeatherView").html(modelolist.Weather);
+                    $("#ListWeathersView").html(modelolist.ListWeather);
+                }
+                else {
+                    ShowSweetAlert("Ocurrio un problema", "No se encuentra información climatica de ese sector.", "warning");
+                }
+            });
+        })
     </script>
 }

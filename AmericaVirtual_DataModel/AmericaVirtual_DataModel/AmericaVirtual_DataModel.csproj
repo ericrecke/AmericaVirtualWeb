@@ -63,7 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AmericaVirtualContext.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Manager\Base_Manager.cs" />
     <Compile Include="Mapping\CountriesMap.cs" />
     <Compile Include="Mapping\ProvincesMap.cs" />

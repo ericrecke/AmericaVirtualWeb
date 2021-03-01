@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using AmericaVirtual_DataModel.Manager;
+using System.IO;
+using System.Web.Mvc;
 
 namespace AmericaVirtual_Web.Models
 {
@@ -88,6 +90,33 @@ namespace AmericaVirtual_Web.Models
             context.User = new System.Security.Principal.GenericPrincipal(new FormsIdentity(authTicket), rols);
             HttpContext.Current = context;
             return UserData;
+        }
+
+        public static string GetImage(EnumTypeWeather TypeWeather)
+        {
+            var Strreturn = "";
+            switch (TypeWeather)
+            {
+                case EnumTypeWeather.Soleado:
+                    Strreturn = "/Content/Images/Weather-Icons/Sun.png";
+                    break;
+                case EnumTypeWeather.Nublado:
+                    Strreturn = "/Content/Images/Weather-Icons/Cloudy.png";
+                    break;
+                case EnumTypeWeather.Parcialmente_Nublado:
+                    Strreturn = "/Content/Images/Weather-Icons/Partly_Cloudy.png";
+                    break;
+                case EnumTypeWeather.Lluvia:
+                    Strreturn = "/Content/Images/Weather-Icons/Rain.png";
+                    break;
+                case EnumTypeWeather.Lluvia_Electrica:
+                    Strreturn = "/Content/Images/Weather-Icons/ElectrinRain.png";
+                    break;
+                case EnumTypeWeather.Nieve:
+                    Strreturn = "/Content/Images/Weather-Icons/Snow.png";
+                    break;
+            }
+            return Strreturn;
         }
     }
 }

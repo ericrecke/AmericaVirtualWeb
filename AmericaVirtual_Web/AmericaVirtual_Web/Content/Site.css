@@ -207,6 +207,13 @@ li.weather:not(:last-child) {
     color: #444;
 }
 
+.weather-day-title {
+    font-size: 25px;
+    letter-spacing: 10px;
+    font-weight: 500;
+    color: #314284;
+}
+
 .weather-img {
     padding-bottom: 30px;
     position: relative;
