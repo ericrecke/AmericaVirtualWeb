@@ -2,6 +2,7 @@
  Proyecto de AmericaVirtual con 3 proyectos internos, uno de DataModel, un WebService y la Web.
  
 Las respuestas del challenge de Sql se encuentran en la carpeta de Configuración.
+Las Querys para levantar las tablas y el DB estan tambien en la carpeta Configuración.
 
 Se utilizó el sistema MVC para crear la web, estan subidos los 3 proyectos, y se publicaron en las carpetas de Publish la web y el WCF. pueden ser levantados por IIS o, los proyectos con el visual Studio.
 
