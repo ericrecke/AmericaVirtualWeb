@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="93f357a7-d7f8-4c2c-b47f-9e9b3a8ef664" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="913d1257-4069-438d-95e4-08dd509f60b6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,13 +22,13 @@
     <MetadataSource Address="http://localhost:24227/AmericaVirtualService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AmericaVirtualService.disco" MetadataType="Disco" ID="fdfb8cf1-2ecd-4512-86e9-fb3a816f3416" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?disco" />
-    <MetadataFile FileName="AmericaVirtualService4.xsd" MetadataType="Schema" ID="1ccb348b-b7b8-4d47-a4bc-59b6b74bc36e" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd4" />
-    <MetadataFile FileName="AmericaVirtualService3.xsd" MetadataType="Schema" ID="7cf3a859-73c4-466e-b8f2-92173fcdd6cc" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd3" />
-    <MetadataFile FileName="AmericaVirtualService2.xsd" MetadataType="Schema" ID="344808ab-d9fc-4156-b180-1434466a2465" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd2" />
-    <MetadataFile FileName="AmericaVirtualService1.xsd" MetadataType="Schema" ID="bad3e739-10bf-4c5b-934f-9ff6e4a2fff0" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd1" />
-    <MetadataFile FileName="AmericaVirtualService.xsd" MetadataType="Schema" ID="0a6bff06-430a-4f07-92aa-4b2032864d01" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd0" />
-    <MetadataFile FileName="AmericaVirtualService.wsdl" MetadataType="Wsdl" ID="b9fcac38-bf6c-4d83-bdd1-815ae2bf7c6e" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?wsdl" />
+    <MetadataFile FileName="AmericaVirtualService.disco" MetadataType="Disco" ID="bbbdcf22-5910-4061-863b-b7a0f51d3a5d" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?disco" />
+    <MetadataFile FileName="AmericaVirtualService.xsd" MetadataType="Schema" ID="b6200fa6-871f-41f7-aa71-0a9f2a3db2ca" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd4" />
+    <MetadataFile FileName="AmericaVirtualService1.xsd" MetadataType="Schema" ID="4e35179d-1d99-413c-8787-2d895331018f" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AmericaVirtualService2.xsd" MetadataType="Schema" ID="4afa1f8e-1d37-49a8-9876-68b57519afb4" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AmericaVirtualService3.xsd" MetadataType="Schema" ID="f1060e48-af4a-47f1-88be-1325eec4a79f" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AmericaVirtualService4.xsd" MetadataType="Schema" ID="f2c02bdb-778c-494f-9051-20fdb21579e3" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AmericaVirtualService.wsdl" MetadataType="Wsdl" ID="64af926c-e0a3-4981-a8ff-5384d0807485" SourceId="1" SourceUrl="http://localhost:24227/AmericaVirtualService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

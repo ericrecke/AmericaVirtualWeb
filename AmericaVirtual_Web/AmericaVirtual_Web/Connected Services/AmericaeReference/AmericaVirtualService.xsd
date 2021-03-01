@@ -1,166 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AmericaVirtualWS" />
-  <xs:import schemaLocation="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel" />
-  <xs:element name="GetData">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="value" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetDataResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetDataUsingDataContract">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AmericaVirtualWS" minOccurs="0" name="composite" nillable="true" type="q1:CompositeType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetDataUsingDataContractResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AmericaVirtualWS" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q2:CompositeType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ValidateLogin">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="pass" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ValidateLoginResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ValidateLoginResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetCountries">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Id_Country" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetCountriesResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetCountriesResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetProvinces">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Id_Province" type="xs:int" />
-        <xs:element minOccurs="0" name="Id_Country" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetProvincesResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetProvincesResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetUsers">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Id_User" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetUsersResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetUsersResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetWeathers">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Id_Weather" type="xs:int" />
-        <xs:element minOccurs="0" name="Id_Province" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetWeathersResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetWeathersResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetWeathersWeek">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Id_Weather" type="xs:int" />
-        <xs:element minOccurs="0" name="Id_Province" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetWeathersWeekResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetWeathersWeekResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddModCountry">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel" minOccurs="0" name="model" nillable="true" type="q3:Countries" />
-        <xs:element minOccurs="0" name="delete" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddModCountryResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AddModCountryResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddModProvince">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel" minOccurs="0" name="model" nillable="true" type="q4:Provinces" />
-        <xs:element minOccurs="0" name="delete" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddModProvinceResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AddModProvinceResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddModUser">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel" minOccurs="0" name="model" nillable="true" type="q5:Users" />
-        <xs:element minOccurs="0" name="delete" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddModUserResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AddModUserResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel.Manager" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AmericaVirtual_DataModel.Manager" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:24227/AmericaVirtualService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="EnumTypeUser">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Usuario">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Admin">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumTypeUser" nillable="true" type="tns:EnumTypeUser" />
 </xs:schema>

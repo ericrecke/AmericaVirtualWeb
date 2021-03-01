@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmericaVirtual_Web", "AmericaVirtual_Web\AmericaVirtual_Web.csproj", "{FE0A362B-20A1-4F75-8691-741687CCEE6E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A7456879-4635-4F35-B1FC-41FF69727B04} = {A7456879-4635-4F35-B1FC-41FF69727B04}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmericaVirtual_DataModel", "..\AmericaVirtual_DataModel\AmericaVirtual_DataModel\AmericaVirtual_DataModel.csproj", "{B39853D4-FEFE-4C5B-B704-42D4481D62C4}"
 EndProject

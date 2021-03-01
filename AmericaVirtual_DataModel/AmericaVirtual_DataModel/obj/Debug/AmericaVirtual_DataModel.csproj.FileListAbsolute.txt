@@ -37,4 +37,3 @@ C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtual_DataModel\AmericaVirtu
 C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtual_DataModel\AmericaVirtual_DataModel\obj\Debug\AmericaVirtual_DataModel.csproj.CopyComplete
 C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtual_DataModel\AmericaVirtual_DataModel\obj\Debug\AmericaVirtual_DataModel.dll
 C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtual_DataModel\AmericaVirtual_DataModel\obj\Debug\AmericaVirtual_DataModel.pdb
-C:\Users\ericr\source\repos\AmericaVirtual\AmericaVirtual_DataModel\AmericaVirtual_DataModel\obj\Debug\AmericaVirtual_DataModel.csprojAssemblyReference.cache
