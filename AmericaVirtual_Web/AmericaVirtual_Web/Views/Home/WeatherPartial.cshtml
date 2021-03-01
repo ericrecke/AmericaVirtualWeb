@@ -3,7 +3,7 @@
 
 @model Weather
 
-@if (Model != null)
+@if (Model != null && Model.Countries != null && Model.Provinces != null)
 {
     var ClimaAct = Model;
     <div class="row">
@@ -22,12 +22,18 @@
             <p class="t-weather-l mt-40n"><span>@ClimaAct.Sensation_C.ToString().Replace(",", ".")</span> ℃</p>
             <p class="t-weather mt-5n l-spacing-5"><span>@ClimaAct.Sensation_F.ToString().Replace(",", ".")</span> °F</p>
         </div>
-        <div class="col-md-7 pt-4">
+        <div class="col-md-7 pt-2 fixMT">
             <p style="text-align:end;">
                 Prob. de precipitaciones: @ClimaAct.Rainfall %<br />
                 Humedad: @ClimaAct.Humidity %<br />
                 Viento: a @ClimaAct.Wind km/h.
             </p>
         </div>
+    </div>
+}
+else
+{
+    <div class="row">
+            <p class="text-center"> Para poder visualizar el Clima Actual, primero debe existir un campo en la base de datos.</p>
     </div>
 }

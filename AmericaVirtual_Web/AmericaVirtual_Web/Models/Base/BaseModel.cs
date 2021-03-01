@@ -16,5 +16,12 @@ namespace AmericaVirtual_Web.Models
 
         public Weather ClimaPrincipal { get; set; }
         public List<Weather> Climas { get; set; }
+        public BaseModel()
+        {
+            Paises = new List<Countries>();
+            Provincias = new List<Provinces>();
+            Climas = new List<Weather>();
+            ClimaPrincipal = new Weather();
+        }
     }
 }

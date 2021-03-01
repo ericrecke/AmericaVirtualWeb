@@ -3,14 +3,23 @@
 
 @model List<Weather>
 
-<ul class="weather">
-    @foreach (var Weather in (List<Weather>)Model)
-    {
-        <li class="weather">
-            <span class="weather-day weather-day-title t-font-virtual">@Weather.Date.ToString("dddd")</span>
-            <span class="weather-img"><img class="mx-auto d-block" id="weather-icon-day" src="@Web_Helper.GetImage(Weather.TypeWeather)" alt="Sol" /></span>
-            <span class="weather-day-temperature l-spacing-4">@Weather.Sensation_C.ToString().Replace(",", ".") °C</span>
-            <span class="weather-day-temperature l-spacing-4">@Weather.Sensation_F.ToString().Replace(",", ".") °F</span>
-        </li>
-    }
-</ul>
+@if (Model.Count > 0)
+{
+    <ul class="weather">
+        @foreach (var Weather in (List<Weather>)Model)
+        {
+            <li class="weather">
+                <span class="weather-day weather-day-title t-font-virtual">@Weather.Date.ToString("dddd")</span>
+                <span class="weather-img"><img class="mx-auto d-block" id="weather-icon-day" src="@Web_Helper.GetImage(Weather.TypeWeather)" alt="Sol" /></span>
+                <span class="weather-day-temperature l-spacing-4">@Weather.Sensation_C.ToString().Replace(",", ".") °C</span>
+                <span class="weather-day-temperature l-spacing-4">@Weather.Sensation_F.ToString().Replace(",", ".") °F</span>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <h4 class="text-center c-virtual">Climas</h4>
+    <hr class="c-virtual">
+    <p class="text-center"> Para poder visualizar el Clima Actual, primero debe existir un campo en la base de datos.</p>
+}

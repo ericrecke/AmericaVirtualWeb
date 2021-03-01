@@ -371,3 +371,86 @@ li.weather:not(:last-child) {
         }
 
 /*End Design Buttons*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .mt-40n {
+        margin-top: 0;
+    }
+
+    .t-weather-l {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+        .t-weather-l span {
+            font-size: 40px;
+        }
+
+    .t-weather-s span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 991px) {
+    .mt-40n {
+        margin-top: 0;
+    }
+
+    .t-weather span {
+        font-size: 18px;
+    }
+
+    .weather-day {
+        font-size: 18px;
+        letter-spacing: 7px;
+    }
+
+    .fixMT {
+        margin-top: -20px;
+    }
+
+    .t-weather-l {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+        .t-weather-l span {
+            font-size: 40px;
+        }
+
+    .t-weather-s span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .weather-day {
+        letter-spacing: 4px;
+    }
+}
+
+@media (max-width: 536px) {
+    .weather-day {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    .l-spacing-4 {
+        letter-spacing: 1px;
+    }
+    .footer-txt {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .weather-day-temperature {
+        font-size: 13px;
+    }
+    .weather-day {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+}
+
